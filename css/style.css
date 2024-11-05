@@ -1,0 +1,58 @@
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d3d3d3;
+}
+
+.timer {
+  font-size: 10rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.countdown0 {
+  display: ;
+}
+.countdown1 {
+  display: ;
+}
+
+.worktext {
+  display: none;
+  font-size: 3rem;
+}
+
+.resttext {
+  display: none;
+  font-size: 3rem;
+}
+
+.ready {
+  font-size: 10rem;
+}
+
+.finish {
+  font-size: 4rem;
+  display: none;
+}
+
+.interact--btns {
+  background-color: red;
+  font-size: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.show-turns {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
