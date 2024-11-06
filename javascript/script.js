@@ -10,8 +10,8 @@ let startbtn = document.querySelector(".start");
 let resetbtn = document.querySelector(".reset");
 let body = document.querySelector("body");
 finnish.style.display = beReadyTime = 5;
-let workTime = 5;
-let restTime = 5;
+let workTime = 20;
+let restTime = 10;
 isworking = true;
 let rounds = 8;
 let currentrounds = 0;
@@ -31,7 +31,7 @@ function runtime() {
     if (workTime < 0) {
       isworking = false;
       console.log(false);
-      restTime = 5;
+      restTime = 10;
       currentrounds++;
       turns.textContent = currentrounds;
     }
@@ -55,7 +55,7 @@ function runtime() {
     if (restTime < 0) {
       console.log(true);
       isworking = true;
-      workTime = 5;
+      workTime = 20;
     }
   }
 }
@@ -70,6 +70,7 @@ function beReady() {
 }
 
 startbtn.addEventListener("click", function () {
+  startbtn.disabled = true;
   time0 = setInterval(beReady, 1000);
   setTimeout(function () {
     timerrun = setInterval(runtime, 1000);
@@ -77,10 +78,9 @@ startbtn.addEventListener("click", function () {
 });
 
 resetbtn.addEventListener("click", function () {
-  let workTime = 5;
-  let restTime = 5;
+  let workTime = 20;
+  let restTime = 10;
   isworking = true;
   let rounds = 8;
   let currentrounds = 0;
 });
-clearInterval();
