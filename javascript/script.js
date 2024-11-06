@@ -78,9 +78,37 @@ startbtn.addEventListener("click", function () {
 });
 
 resetbtn.addEventListener("click", function () {
-  let workTime = 20;
-  let restTime = 10;
-  isworking = true;
-  let rounds = 8;
-  let currentrounds = 0;
+  resetbtn.addEventListener("click", function () {
+    // Reset timer values to their initial states
+    workTime = 20;
+    restTime = 10;
+    isworking = true;
+    rounds = 8;
+    currentrounds = 0;
+    beReadyTime = 5;
+
+    // Update the displayed countdown and round info
+    count1.textContent = workTime;
+    count2.textContent = restTime;
+    count1.classList.add("hidden");
+    count2.classList.add("hidden");
+    turns.textContent = currentrounds;
+    readyTime.textContent = beReadyTime;
+    displaywork.style.display = "none";
+    displayrest.style.display = "none";
+    finnish.style.display = "none";
+
+    // Re-enable the start button
+    startbtn.disabled = false;
+
+    // Clear any running intervals
+    clearInterval(time0);
+    clearInterval(timerrun);
+
+    // Hide the ready countdown display
+    readyTime.style.display = "block";
+
+    // Reset the background color to default
+    body.style.backgroundColor = "#d3d3d3";
+  });
 });
