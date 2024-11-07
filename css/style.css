@@ -1,11 +1,11 @@
 body {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #d3d3d3;
+  background-color: #000000b1;
 }
 .all-btn {
   display: grid;
@@ -38,7 +38,7 @@ body {
 }
 
 .interact--btns {
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.629);
   font-size: 3rem;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -91,10 +91,64 @@ body {
   grid-column: 2 / 3;
   grid-row: 1;
   font-size: 2rem;
+  background-color: rgba(72, 70, 70, 0.612);
 }
 
 .more--turns {
   grid-column: 7 / 8;
   grid-row: 1;
   font-size: 2rem;
+  background-color: rgba(72, 70, 70, 0.612);
+}
+
+@media (max-width: 600px) {
+  .all-btn {
+    width: 100%;
+    height: auto;
+  }
+
+  .of {
+    font-size: 1rem;
+  }
+
+  .show-turns {
+    font-size: 4rem;
+    font-family: sans-serif;
+  }
+
+  .of {
+    grid-row: 3 / 4;
+    grid-column: 1 / 8;
+    font-size: 1.5rem;
+  }
+
+  .turns {
+    grid-column: 3/ 5;
+    grid-row: 2 / 3;
+    place-self: center;
+  }
+
+  .turn {
+    grid-column: 3 / 5;
+    grid-row: 3 / 5;
+    place-self: center;
+  }
+
+  .start {
+    grid-column: 3 /4;
+  }
+
+  .reset {
+    grid-column: 4 / 5;
+  }
+
+  .less--turns {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .more--turns {
+    grid-column: 7 / 8;
+    grid-row: 1;
+  }
 }

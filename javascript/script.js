@@ -79,13 +79,17 @@ startbtn.addEventListener("click", function () {
 });
 
 moreturns.addEventListener("click", function () {
-  rounds++;
-  showturns.textContent = rounds;
+  if (rounds >= 1) {
+    rounds++;
+    showturns.textContent = rounds;
+  }
 });
 
 lessturns.addEventListener("click", function () {
-  rounds--;
-  showturns.textContent = rounds;
+  if (rounds > 1) {
+    rounds--;
+    showturns.textContent = rounds;
+  }
 });
 
 function hide() {
