@@ -39,13 +39,14 @@ body {
 
 .interact--btns {
   background-color: rgba(0, 0, 0, 0.629);
-  font-size: 3rem;
+
   margin: 1rem;
   border-radius: 0.5rem;
   font-weight: bold;
   border-radius: 0.5rem;
   height: 5rem;
   width: 5rem;
+  border-style: none;
 }
 
 .hidden {
@@ -90,14 +91,14 @@ body {
 .less--turns {
   grid-column: 2 / 3;
   grid-row: 1;
-  font-size: 2rem;
+  font-size: 1rem;
   background-color: rgba(72, 70, 70, 0.612);
 }
 
 .more--turns {
   grid-column: 7 / 8;
   grid-row: 1;
-  font-size: 2rem;
+  font-size: 1rem;
   background-color: rgba(72, 70, 70, 0.612);
 }
 
@@ -150,5 +151,8 @@ body {
   .more--turns {
     grid-column: 7 / 8;
     grid-row: 1;
+  }
+  .icons {
+    height: 3rem;
   }
 }
