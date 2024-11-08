@@ -80,7 +80,7 @@ body {
 }
 
 .start {
-  background-color: green;
+  background-color: rgb(7, 45, 7);
   grid-column: 1 /5;
   grid-row: 2 / 4;
   width: 5rem;
@@ -90,7 +90,7 @@ body {
 }
 
 .reset {
-  background-color: red;
+  background-color: rgb(133, 1, 1);
   grid-column: 5 /-1;
   grid-row: 2 / 4;
   width: 5rem;
