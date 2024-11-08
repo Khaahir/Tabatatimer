@@ -1,6 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -33,10 +34,11 @@ body {
 .ready,
 .countdown0,
 .countdown1 {
-  font-size: 10rem;
+  font-size: 13rem;
   grid-column: 1 / -1;
   grid-row: 1 / 3;
-  padding-top: 2rem;
+  padding-bottom: 3rem;
+  margin-top: 2rem;
 }
 
 .finish {
@@ -61,18 +63,18 @@ body {
 .turns {
   grid-column: 1 / -1;
   grid-row: 3 / 4;
-  font-size: 5rem;
+  font-size: 6rem;
 }
 
 .turn {
-  font-size: 5rem;
+  font-size: 6rem;
   grid-column: 1 / -1;
   grid-row: 5 / 6;
   align-self: start;
 }
 
 .of {
-  font-size: 3rem;
+  font-size: 4rem;
   grid-column: 1 / -1;
   grid-row: 4 / 5;
   place-self: center;
@@ -80,32 +82,32 @@ body {
 }
 
 .start {
-  background-color: rgb(7, 45, 7);
+  background-color: rgb(105, 175, 1);
   grid-column: 1 /5;
   grid-row: 2 / 4;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 99rem;
   place-self: center;
 }
 
 .reset {
-  background-color: rgb(133, 1, 1);
+  background-color: crimson;
   grid-column: 5 /-1;
   grid-row: 2 / 4;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 99rem;
   place-self: center;
 }
 .icons {
-  height: 2rem;
+  height: 5rem;
 }
 .less--turns {
   background-color: rgba(72, 70, 70, 0.612);
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 5/6;
-  height: 4rem;
+  height: 6rem;
   align-self: start;
 }
 
@@ -113,7 +115,7 @@ body {
   background-color: rgba(72, 70, 70, 0.612);
   grid-column: 6 / -1;
   grid-row: 5 / 6;
-  height: 4rem;
+  height: 6rem;
   align-self: start;
 }
 .all-btn {
@@ -123,11 +125,19 @@ body {
 .choose-work {
   grid-column: 1 / 5;
   grid-row: 6 / 7;
+  width: 6rem;
+  height: 3rem;
+  background-color: black;
+  color: white;
 }
 
 .choose-rest {
   grid-column: 5 / -1;
   grid-row: 6 / 7;
+  width: 6rem;
+  height: 3rem;
+  background-color: black;
+  color: white;
 }
 
 .hidden {
