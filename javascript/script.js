@@ -12,6 +12,11 @@ let showturns = document.querySelector(".turn");
 let moreturns = document.querySelector(".more--turns");
 let lessturns = document.querySelector(".less--turns");
 let sound = document.querySelector(".sound");
+let restbtn = document.querySelector(".choose-rest");
+let workbtn = document.querySelector(".choose-work");
+const popupw = document.querySelector(".popup--work ");
+let popupr = document.querySelector(".popup--rest ");
+
 showturns.textContent = 8;
 let preparetime = 5;
 let workTime = 20;
@@ -120,7 +125,18 @@ function hide() {
   displaywork.classList.add("hidden");
   displayrest.classList.add("hidden");
   finnish.classList.add("hidden");
+  popupr.classList.add("hidden");
+  popupw.classList.add("hidden");
 }
+
+restbtn.addEventListener("click", function () {
+  popupr.classList.toggle("hidden");
+});
+
+workbtn.addEventListener("click", function () {
+  popupw.classList.toggle("hidden");
+});
+
 resetbtn.addEventListener("click", function () {
   // Reset timer values to their initial states
   workTime = 20;
@@ -138,7 +154,7 @@ resetbtn.addEventListener("click", function () {
   count2.classList.add("hidden");
   finnish.classList.add("hidden");
   readyTime.style.display = "block";
-  body.style.backgroundColor = "#d3d3d3";
+  body.style.backgroundColor = "#000000b1";
   startbtn.disabled = false;
   moreturns.disabled = false;
   lessturns.disabled = false;
