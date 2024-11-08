@@ -11,6 +11,7 @@ let body = document.querySelector("body");
 let showturns = document.querySelector(".turn");
 let moreturns = document.querySelector(".more--turns");
 let lessturns = document.querySelector(".less--turns");
+let sound = document.querySelector(".sound");
 showturns.textContent = 8;
 let preparetime = 5;
 let workTime = 20;
@@ -20,6 +21,7 @@ let rounds = 8;
 let currentrounds = 0;
 let timerforbeingrdy = 5;
 let timerforworkornot = 0;
+let soundplay = false;
 // swicha mellan 1 o 2 för att timerns ska användas olika
 
 function runtime() {
@@ -29,6 +31,9 @@ function runtime() {
     finnish.classList.remove("hidden");
     body.style.backgroundColor = "#d3d3d3";
     clearInterval(timerrun);
+  }
+  if (workTime === 3) {
+    beep();
   }
   if (isworking) {
     body.style.backgroundColor = "green";
@@ -59,6 +64,9 @@ function runtime() {
       workTime = 20;
     }
   }
+  if (restTime === 2) {
+    beep();
+  }
 }
 
 function beReady() {
@@ -72,6 +80,7 @@ function beReady() {
 
 startbtn.addEventListener("click", function () {
   startbtn.disabled = true;
+
   timerforbeingrdy = setInterval(beReady, 1000);
   setTimeout(function () {
     timerforworkornot = setInterval(runtime, 1000);
@@ -91,6 +100,16 @@ lessturns.addEventListener("click", function () {
     showturns.textContent = rounds;
   }
 });
+
+function beep() {
+  if (!soundplay) {
+    sound.play();
+    // soundplay = true;
+  }
+  // setTimeout(function () {
+  //   soundplay = false;
+  // }, 8000);
+}
 
 function hide() {
   displaywork.classList.add("hidden");
