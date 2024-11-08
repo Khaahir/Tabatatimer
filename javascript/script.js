@@ -16,8 +16,10 @@ let restbtn = document.querySelector(".choose-rest");
 let workbtn = document.querySelector(".choose-work");
 const popupw = document.querySelector(".popup--work ");
 let popupr = document.querySelector(".popup--rest ");
+let popupassets = document.querySelectorAll(".popup-assets");
 
 showturns.textContent = 8;
+let popres;
 let preparetime = 5;
 let workTime = 20;
 let restTime = 10;

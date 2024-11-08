@@ -11,50 +11,42 @@ body {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto;
-
   justify-items: center;
   align-items: center;
 }
 
-.timer {
+/* .timer {
   font-size: 5rem;
   font-family: sans-serif;
   font-weight: bold;
   grid-column: 1 / -1;
   text-align: center;
-}
+} */
 
 .worktext,
 .resttext {
   font-size: 4rem;
   font-weight: bold;
   grid-column: 1 / -1;
-  grid-row: 1 / 2;
-  text-align: center;
+  grid-row: 1 / 3;
+  align-items: start;
+  margin-bottom: 5rem;
 }
 .cirkel {
   border: solid;
   border-radius: 99rem;
   width: 15rem;
   height: 15rem;
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
   display: flex;
   justify-content: center;
-  align-self: center;
-  grid-column: 1 / -1;
-  grid-row: 1 / 3;
+  align-items: end;
 }
-.countdown0,
-.countdown1 {
-  font-size: 9rem;
-  grid-column: 1 / -1;
-  grid-row: 1 / 3;
-  padding-bottom: 3rem;
-  margin-top: 2rem;
+.ready,
+.timer {
+  font-size: 8rem;
   border-radius: 99rem;
-  width: 20rem;
-}
-.ready {
-  font-size: 9rem;
 }
 
 .finish {
