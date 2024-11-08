@@ -1,160 +1,151 @@
-body {
-  height: auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #000000b1;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
-.all-btn {
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000b1;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  width: 100%;
-  height: 100%;
+  grid-template-rows: auto;
+
+  justify-items: center;
+  align-items: center;
 }
 
 .timer {
-  font-size: 10rem;
+  font-size: 5rem;
   font-family: sans-serif;
   font-weight: bold;
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
-.worktext {
-  font-size: 3rem;
-}
-
+.worktext,
 .resttext {
-  font-size: 3rem;
+  font-size: 4rem;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  text-align: center;
 }
-
-.ready {
+.ready,
+.countdown0,
+.countdown1 {
   font-size: 10rem;
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+  padding-top: 2rem;
 }
 
 .finish {
-  font-size: 4rem;
+  font-size: 3rem;
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
+/* Button Styling */
 .interact--btns {
   background-color: rgba(0, 0, 0, 0.629);
-
-  margin: 1rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
   font-weight: bold;
-  border-radius: 0.5rem;
-  height: 5rem;
-  width: 5rem;
+  height: 3rem;
+  width: 3rem;
   border-style: none;
+}
+
+/* Show and Turn Elements */
+
+.turns {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  font-size: 5rem;
+}
+
+.turn {
+  font-size: 5rem;
+  grid-column: 1 / -1;
+  grid-row: 5 / 6;
+  align-self: start;
+}
+
+.of {
+  font-size: 3rem;
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+  place-self: center;
+  align-self: flex-start;
+}
+
+.start {
+  background-color: green;
+  grid-column: 1 /5;
+  grid-row: 2 / 4;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 99rem;
+  place-self: center;
+}
+
+.reset {
+  background-color: red;
+  grid-column: 5 /-1;
+  grid-row: 2 / 4;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 99rem;
+  place-self: center;
+}
+.icons {
+  height: 2rem;
+}
+.less--turns {
+  background-color: rgba(72, 70, 70, 0.612);
+  grid-column: 1 / 3;
+  grid-row: 5/6;
+  height: 4rem;
+  align-self: start;
+}
+
+.more--turns {
+  background-color: rgba(72, 70, 70, 0.612);
+  grid-column: 6 / -1;
+  grid-row: 5 / 6;
+  height: 4rem;
+  align-self: start;
+}
+.all-btn {
+  gap: 5px;
+}
+
+.choose-work {
+  grid-column: 1 / 5;
+  grid-row: 6 / 7;
+}
+
+.choose-rest {
+  grid-column: 5 / -1;
+  grid-row: 6 / 7;
 }
 
 .hidden {
   display: none;
 }
-
-.show {
-  display: block;
-}
-
-.show-turns {
-  font-size: 4rem;
-  font-family: sans-serif;
-}
-
-.of {
-  font-size: 2rem;
-  grid-row: 3 / 4;
-  grid-column: 1 / 9;
-}
-
-.turns {
-  grid-column: 4 / 6;
-  grid-row: 2 / 3;
-  place-self: center;
-}
-
-.turn {
-  grid-column: 4 / 6;
-  grid-row: 4/ 5;
-  place-self: center;
-}
-
-.start {
-  grid-column: 3 /5;
-}
-
-.reset {
-  grid-column: 5 / 7;
-}
-
-.less--turns {
-  grid-column: 2 / 3;
-  grid-row: 1;
-  font-size: 1rem;
-  background-color: rgba(72, 70, 70, 0.612);
-}
-
-.more--turns {
-  grid-column: 7 / 8;
-  grid-row: 1;
-  font-size: 1rem;
-  background-color: rgba(72, 70, 70, 0.612);
-}
-
-@media (max-width: 600px) {
-  .all-btn {
-    width: 100%;
-    height: 100%;
+/* Responsive Design */
+@media (min-width: 1000px) {
+  .timer {
+    font-size: 6rem; /* Larger on bigger screens */
   }
-
-  .of {
-    font-size: 1rem;
+  .worktext,
+  .resttext {
+    font-size: 3rem;
   }
-
-  .show-turns {
+  .ready {
+    font-size: 8rem;
+  }
+  .finish {
     font-size: 4rem;
-    font-family: sans-serif;
-  }
-
-  .of {
-    grid-row: 3 / 4;
-    grid-column: 1 / 8;
-    font-size: 1.5rem;
-  }
-
-  .turns {
-    grid-column: 3/ 5;
-    grid-row: 2 / 3;
-    place-self: center;
-  }
-
-  .turn {
-    grid-column: 3 / 5;
-    grid-row: 3 / 5;
-    place-self: center;
-  }
-
-  .start {
-    grid-column: 3 /4;
-  }
-
-  .reset {
-    grid-column: 4 / 5;
-  }
-
-  .less--turns {
-    grid-column: 1 / 2;
-    grid-row: 3 / 5;
-    place-self: center;
-  }
-
-  .more--turns {
-    grid-column: 7 / 8;
-    grid-row: 3/ 5;
-    place-self: center;
-  }
-  .icons {
-    height: 3rem;
   }
 }

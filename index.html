@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="icon" type="image/x-icon" href="img/download.png" />
     <link rel="stylesheet" href="css/style.css" />
     <title>TABATA TIMER</title>
     <script
@@ -15,42 +16,44 @@
     <span class="worktext">WORK</span>
     <span class="resttext">REST</span>
     <span class="ready">5 </span>
-    <span class="timer countdown0"></span>
-    <span class="timer countdown1"></span>
-    <section class="all-btn">
-      <button class="start interact--btns">
-        <img
-          class="icons"
-          src="img/play_circle_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
-          alt=""
-        />
-      </button>
-      <button class="reset interact--btns">
-        <img
-          class="icons"
-          src="img/replay_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
-          alt=""
-        />
-      </button>
-      <button class="more--turns">
-        <img
-          class="icons"
-          src="img/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
-          alt=""
-        />
-      </button>
-      <button class="less--turns">
-        <img
-          class="icons"
-          src="img/remove_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
-          alt=""
-        />
-      </button>
-      <span class="turns show-turns">0 </span>
-      <span class="of">-----------------OUT OF-----------------</span>
-      <span class="turn show-turns">turns of 8 </span>
-    </section>
-    <span class="finish hidden">You made it!🎉</span>
+    <span class="timer countdown0">12</span>
+    <span class="timer countdown1">21</span>
+
+    <button class="start interact--btns">
+      <img
+        class="icons"
+        src="img/play_circle_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+        alt=""
+      />
+    </button>
+    <button class="reset interact--btns">
+      <img
+        class="icons"
+        src="img/replay_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+        alt=""
+      />
+    </button>
+    <button class="more--turns">
+      <img
+        class="icons"
+        src="img/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+        alt=""
+      />
+    </button>
+    <button class="less--turns">
+      <img
+        class="icons"
+        src="img/remove_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png"
+        alt=""
+      />
+    </button>
+    <p class="turns show-turns">0</p>
+    <p class="of">OF</p>
+    <p class="turn show-turns">turns of 8</p>
+    <!-- </section> -->
+    <button class="choose-rest">resttime</button>
+    <button class="choose-work">worktime</button>
+    <p class="finish hidden">You made it!🎉</p>
     <audio class="sound" src="audio/short-beep-countdown-81121.mp3"></audio>
 
     <script src="javascript/script.js"></script>
