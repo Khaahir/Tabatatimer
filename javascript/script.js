@@ -76,10 +76,15 @@ function beReady() {
   } else {
     readyTime.style.display = "none";
   }
+  if (preparetime === 2) {
+    beep();
+  }
 }
 
 startbtn.addEventListener("click", function () {
   startbtn.disabled = true;
+  lessturns.disabled = true;
+  moreturns.disabled = true;
 
   timerforbeingrdy = setInterval(beReady, 1000);
   setTimeout(function () {
@@ -135,6 +140,8 @@ resetbtn.addEventListener("click", function () {
   readyTime.style.display = "block";
   body.style.backgroundColor = "#d3d3d3";
   startbtn.disabled = false;
+  moreturns.disabled = false;
+  lessturns.disabled = false;
 });
 
 hide();
