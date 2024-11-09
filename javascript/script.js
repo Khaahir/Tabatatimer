@@ -16,20 +16,31 @@ let restbtn = document.querySelector(".choose-rest");
 let workbtn = document.querySelector(".choose-work");
 const popupw = document.querySelector(".popup--work ");
 let popupr = document.querySelector(".popup--rest ");
-let popupassets = document.querySelectorAll(".popup-assets");
+let popupassetswork = document.querySelectorAll(".popup-assets button");
+let popupassets = document.querySelectorAll(".popupr-assets button");
 
 showturns.textContent = 8;
 let popres;
 let preparetime = 5;
-let workTime = 20;
+let workTime = 10;
+let workTime2 = 20;
+let workTime3 = 30;
+let workTime4 = 40;
 let restTime = 10;
+let restTime2 = 20;
+let restTime3 = 30;
+let restTime4 = 40;
+let wTime = 20;
+let rTime = 10;
+let resettime1 = 20;
+let resettime2 = 10;
+
 isworking = true;
 let rounds = 8;
 let currentrounds = 0;
 let timerforbeingrdy = 5;
 let timerforworkornot = 0;
 let soundplay = false;
-// swicha mellan 1 o 2 för att timerns ska användas olika
 
 function runtime() {
   if (currentrounds === rounds) {
@@ -39,7 +50,7 @@ function runtime() {
     body.style.backgroundColor = "#d3d3d3";
     clearInterval(timerrun);
   }
-  if (workTime === 3) {
+  if (wTime === 3) {
     beep();
   }
   if (isworking) {
@@ -48,12 +59,15 @@ function runtime() {
     displaywork.classList.remove("hidden");
     count1.classList.remove("hidden");
     count2.classList.add("hidden");
-    count1.textContent = workTime;
-    workTime--;
-    if (workTime < 0) {
+    count1.textContent = wTime;
+    wTime--;
+    console.log(wTime);
+    if (wTime < 0) {
+      rTime = resettime2;
+      updateResettime();
       isworking = false;
       console.log(false);
-      restTime = 10;
+      rTime;
       currentrounds++;
       turns.textContent = currentrounds;
     }
@@ -63,15 +77,18 @@ function runtime() {
     displaywork.classList.add("hidden");
     count1.classList.add("hidden");
     count2.classList.remove("hidden");
-    count2.textContent = restTime;
-    restTime--;
-    if (restTime < 0) {
+    count2.textContent = rTime;
+    rTime--;
+
+    if (rTime < 0) {
+      wTime = resettime1;
       console.log(true);
       isworking = true;
-      workTime = 20;
+      updateWorkTime();
+      wTime;
     }
   }
-  if (restTime === 2) {
+  if (rTime === 2) {
     beep();
   }
 }
@@ -140,9 +157,8 @@ workbtn.addEventListener("click", function () {
 });
 
 resetbtn.addEventListener("click", function () {
-  // Reset timer values to their initial states
-  workTime = 20;
-  restTime = 10;
+  wTime = 20;
+  rTime = 10;
   isworking = true;
   showturns.textContent = rounds;
   currentrounds = 0;
@@ -162,4 +178,84 @@ resetbtn.addEventListener("click", function () {
   lessturns.disabled = false;
 });
 
+function restpop() {
+  for (let i = 0; i < popupassets.length; i++) {
+    popupassets[0] = restTime;
+    popupassets[1] = restTime2;
+    popupassets[2] = restTime3;
+    popupassets[3] = restTime4;
+  }
+}
+popupassets[0].addEventListener("click", function () {
+  count2.textContent = restTime;
+  rTime = restTime;
+  resettime2 = restTime;
+  popupr.classList.toggle("hidden");
+});
+
+popupassets[1].addEventListener("click", function () {
+  count2.textContent = restTime2;
+  rTime = restTime2;
+  resettime2 = restTime2;
+  popupr.classList.toggle("hidden");
+});
+
+popupassets[2].addEventListener("click", function () {
+  count2.textContent = restTime3;
+  rTime = restTime3;
+  resettime2 = restTime3;
+  popupr.classList.toggle("hidden");
+});
+
+popupassets[3].addEventListener("click", function () {
+  count2.textContent = restTime4;
+  rTime = restTime4;
+  resettime2 = restTime4;
+  popupr.classList.toggle("hidden");
+});
+
+function workpop() {
+  for (let i = 0; i < popupassetswork.length; i++) {
+    popupassetswork[0] = workTime;
+    popupassetswork[1] = workTime2;
+    popupassetswork[2] = workTime3;
+    popupassetswork[3] = workTime4;
+  }
+}
+
+popupassetswork[0].addEventListener("click", function () {
+  count1.textContent = workTime;
+  wTime = workTime;
+  resettime1 = workTime;
+  popupw.classList.toggle("hidden");
+});
+
+popupassetswork[1].addEventListener("click", function () {
+  count1.textContent = workTime2;
+  wTime = workTime2;
+  resettime1 = workTime2;
+  popupw.classList.toggle("hidden");
+});
+
+popupassetswork[2].addEventListener("click", function () {
+  count1.textContent = workTime3;
+  wTime = workTime3;
+  resettime1 = workTime3;
+  popupw.classList.toggle("hidden");
+});
+
+popupassetswork[3].addEventListener("click", function () {
+  count1.textContent = workTime4;
+  wTime = workTime4;
+  resettime1 = workTime4;
+  popupw.classList.toggle("hidden");
+});
+
+const updateResettime = () => {};
+const updateWorkTime = () => {};
+
 hide();
+restpop();
+workpop();
+console.log(count1);
+console.log(count2);
