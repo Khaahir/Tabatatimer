@@ -50,7 +50,7 @@ function runtime() {
     body.style.backgroundColor = "#d3d3d3";
     clearInterval(timerrun);
   }
-  if (wTime === 3) {
+  if (wTime === 2) {
     beep();
   }
   if (isworking) {
@@ -88,7 +88,7 @@ function runtime() {
       wTime;
     }
   }
-  if (rTime === 2) {
+  if (rTime ===2) {
     beep();
   }
 }
@@ -131,14 +131,33 @@ lessturns.addEventListener("click", function () {
 });
 
 function beep() {
-  if (!soundplay) {
-    sound.play();
-    // soundplay = true;
-  }
-  // setTimeout(function () {
-  //   soundplay = false;
-  // }, 8000);
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  const soundUrl = "audio/short-beep-countdown-81121.mp3"; // Path to your sound file
+
+  // Fetch and decode the audio file
+  fetch(soundUrl)
+      .then(response => response.arrayBuffer())
+      .then(buffer => audioContext.decodeAudioData(buffer))
+      .then(decodedData => {
+          const audioBufferSource = audioContext.createBufferSource();
+          const gainNode = audioContext.createGain();
+
+          // Connect the audio source to gain and audio context destination
+          audioBufferSource.buffer = decodedData;
+          audioBufferSource.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+
+          // Set volume
+          gainNode.gain.setValueAtTime(0.1, audioContext.currentTime); // Low volume to avoid interruption
+
+          // Play the sound
+          audioBufferSource.start();
+      })
+      .catch(error => {
+          console.error("Error playing beep sound:", error);
+      });
 }
+
 
 function hide() {
   displaywork.classList.add("hidden");
